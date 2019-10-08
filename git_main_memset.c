@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   git_main_memset.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 11:52:00 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/08 16:00:21 by mamaquig         ###   ########.fr       */
+/*   Created: 2019/10/08 16:01:16 by mamaquig          #+#    #+#             */
+/*   Updated: 2019/10/08 16:01:24 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c size_t len)
+int main(void)
 {
-	size_t i;
+    // Test avec un tableau de int
+    int t[] = {14578, 1458758, 1421454, 14254585};
+    ft_memset(t, 0, 3*sizeof(t[0]));
 
-	i = 0;
-	while(i < n)
-	{
-		((unsigned char *)s)[i] = (unsigned char) c;
-		i++;
-	}
-	return(0);
+    int i = 0;
+    for(i = 0; i < 4; i++)
+    {
+        printf("%d\n", t[i]);
+    }
+
+    return(0);;
 }
