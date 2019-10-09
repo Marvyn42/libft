@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   git_main_strrchr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 17:39:08 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/09 12:27:35 by mamaquig         ###   ########.fr       */
+/*   Created: 2019/10/09 17:03:21 by mamaquig          #+#    #+#             */
+/*   Updated: 2019/10/09 17:03:26 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, size_t n)
+int main()
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)s)[i] = 0;
-		i++;
-	}
+	const char s[] = "";
+	int c = 117;
+	printf("la mienne: %s\n", ft_strrchr(s, c));
+	printf("la vraie:  %s\n", strrchr(s, c));
+	return (0);
 }

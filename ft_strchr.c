@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 17:39:08 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/09 12:27:35 by mamaquig         ###   ########.fr       */
+/*   Created: 2019/10/09 11:41:22 by mamaquig          #+#    #+#             */
+/*   Updated: 2019/10/09 17:01:45 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
+	while (*s != '\0')
 	{
-		((unsigned char *)s)[i] = 0;
-		i++;
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
+	if (*s == '\0' && c == '\0')
+		return ((char *)s);
+	return (0);
 }
