@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 11:41:22 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/10 13:52:52 by mamaquig         ###   ########.fr       */
+/*   Created: 2019/10/10 12:16:04 by mamaquig          #+#    #+#             */
+/*   Updated: 2019/10/10 14:04:48 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (*s != '\0')
+	size_t i;
+	char *str;
+
+	i = 0;
+	str = (char *)s;
+	while (i < n)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (*str == c)
+			return (str);
+		str++;
+		i++;
 	}
-	if (*s == '\0' && c == '\0')
-		return ((char *)s);
 	return (0);
 }
