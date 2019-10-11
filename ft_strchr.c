@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:41:22 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/10 13:52:52 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:42:17 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strchr(const char *s, int c)
 {

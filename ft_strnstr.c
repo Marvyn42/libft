@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 18:39:13 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/11 14:19:48 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:42:55 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

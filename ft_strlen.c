@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 14:10:15 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/11 14:12:10 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:42:33 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 size_t		ft_strlen(const char *s)
 {

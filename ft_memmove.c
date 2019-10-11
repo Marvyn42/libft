@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:07:21 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/10 16:13:47 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:41:56 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:07:47 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/11 14:33:23 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:42:46 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {

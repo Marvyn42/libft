@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:44:18 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/08 17:21:47 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/11 18:38:46 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int		ft_atoi(const char *str)
 {
