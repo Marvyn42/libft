@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 13:36:26 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/11 14:17:18 by mamaquig         ###   ########.fr       */
+/*   Created: 2019/10/11 13:48:19 by mamaquig          #+#    #+#             */
+/*   Updated: 2019/10/11 15:55:23 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	else
-		return (0);
+	void	*dst;
+	size_t	total;
+
+	total = count * size;
+	dst = malloc(sizeof(total));
+	if (dst == NULL || count == 0 || size == 0)
+		return (NULL);
+	bzero(dst, total);
+	return (dst);
 }

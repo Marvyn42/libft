@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:07:47 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/07 15:26:14 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/11 14:33:23 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (str[i])
+	if (n == 0)
+		return (0);
+	while (i < n && s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] -s2[i]);
 		i++;
-	return(i);
+	}
+	return (s1[i] - s2[i]);
 }

@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:39:08 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/09 12:27:35 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/11 15:50:45 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
