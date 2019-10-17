@@ -6,13 +6,13 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:52:00 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/11 18:42:05 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/17 15:17:21 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memset(void *b, int c size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t i;
 
