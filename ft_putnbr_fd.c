@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:26:05 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/17 17:34:11 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:28:29 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_putnbr_fd(int n, int fd)
 	else if (n < 0)
 	{
 		write(fd, "-", 1);
-		ft_putnbr(n * -1);
+		ft_putnbr_fd(n * -1, fd);
 	}
 	else if (n >= 10)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 	else
 	{

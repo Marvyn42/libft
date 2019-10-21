@@ -1,44 +1,41 @@
-PATH		= srcs/
-
-SRCS		= ${PATH}ft_putchar.c ${PATH}ft_swap.c ${PATH}ft_putstr.c ${PATH}ft_strlen.c ${PATH}ft_strcmp.c
-			${PATH}ft_atoi.c \
-			${PATH}ft_bzero.c \
-			${PATH}ft_calloc.c \
-			${PATH}ft_isalnum.c \
-			${PATH}ft_isalpha.c \
-			${PATH}ft_isascii.c \
-			${PATH}ft_isdigit.c \
-			${PATH}ft_isprint.c \
-			${PATH}ft_itoa.c \
-			${PATH}ft_memccpy.c \
-			${PATH}ft_memchr.c \
-			${PATH}ft_memcmp.c \
-			${PATH}ft_memcpy.c \
-			${PATH}ft_memmove.c \
-			${PATH}ft_memset.c \
-			${PATH}ft_putchar_fd.c \
-			${PATH}ft_putendl_fd.c \
-			${PATH}ft_putnbr_fd.c \
-			${PATH}ft_putstr_fd.c \
-			${PATH}ft_split.c \
-			${PATH}ft_strchr.c \
-			${PATH}ft_strdup.c \
-			${PATH}ft_strjoin.c \
-			${PATH}ft_strlcpy.c \
-			${PATH}ft_strlcat.c \
-			${PATH}ft_strlen.c \
-			${PATH}ft_strmapi.c \
-			${PATH}ft_strncmp.c \
-			${PATH}ft_strnstr.c \
-			${PATH}ft_strrchr.c \
-			${PATH}ft_strtrim.c \
-			${PATH}ft_substr.c \
-			${PATH}ft_tolower.c \
-			${PATH}ft_toupper.c
+SRC = ft_atoi.c \
+  ft_bzero.c \
+  ft_calloc.c \
+  ft_isalnum.c \
+  ft_isalpha.c \
+  ft_isascii.c \
+  ft_isdigit.c \
+  ft_isprint.c \
+  ft_itoa.c \
+  ft_memccpy.c \
+  ft_memchr.c \
+  ft_memcmp.c \
+  ft_memcpy.c \
+  ft_memmove.c \
+  ft_memset.c \
+  ft_putchar_fd.c \
+  ft_putendl_fd.c \
+  ft_putnbr_fd.c \
+  ft_putstr_fd.c \
+  ft_split.c \
+  ft_strchr.c \
+  ft_strdup.c \
+  ft_strjoin.c \
+  ft_strlcpy.c \
+  ft_strlcat.c \
+  ft_strlen.c \
+  ft_strmapi.c \
+  ft_strncmp.c \
+  ft_strnstr.c \
+  ft_strrchr.c \
+  ft_strtrim.c \
+  ft_substr.c \
+  ft_tolower.c \
+  ft_toupper.c
 
 HEADERS		= libft.h
 
-OBJS		= ${SRCS:.c=.o}
+OBJS		= ${SRC:.c=.o}
 
 NAME		= libft.a
 

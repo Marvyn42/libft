@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:01:25 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/21 14:59:13 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/21 18:40:23 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ char		*ft_before_trim(char const *s1, char const *set, int size)
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
+	size_t	i;
 	char	*newstr;
 	char	*dst;
 	size_t	size;
