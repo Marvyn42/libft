@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 12:50:53 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/14 17:23:06 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:14:01 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t len;
 
 	srcsize = ft_strlen(src);
-	if (srcsize >= dstsize)
+	if (dstsize == 0)
+		len = 0;
+	else if (srcsize >= dstsize)
 		len = dstsize - 1;
 	else
 		len = srcsize;
