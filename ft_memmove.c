@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 14:07:21 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/23 20:13:20 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/23 20:18:36 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	ptrdst = (unsigned char*)dst;
 	ptrsrc = (unsigned char*)src;
 	i = 0;
+	if (dst == NULL && src == NULL)
+		return (0);
 	if (ptrsrc < ptrdst)
 		while (i < len)
 		{
