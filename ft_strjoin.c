@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:25:22 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/17 16:49:12 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/24 19:03:22 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *str;
-	size_t size_s1;
-	size_t size_s2;
-	size_t i;
+	char	*str;
+	size_t	size_s1;
+	size_t	size_s2;
+	size_t	i;
 
+	if (!s1 || !s2)
+		return (NULL);
 	size_s1 = ft_strlen(s1);
 	size_s2 = ft_strlen(s2);
 	i = size_s1 + size_s2 + 1;
-	str = malloc(sizeof(char) * i);
-	if (str == NULL)
+	if (!(str = malloc(sizeof(char) * i)))
 		return (NULL);
 	ft_memset(str, 0, i);
 	ft_memcpy(str, s1, size_s1);
