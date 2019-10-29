@@ -6,117 +6,51 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:01:25 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/21 18:40:23 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/29 18:09:18 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcp2(char const *s1, char *str, int i)
+int		is_in_str(char c, char *set)
 {
-	int j;
-
-	j = 0;
-	while (j <= i)
-	{
-		str[j] = s1[j];
-		j++;
-	}
-	str[j] = '\0';
-	return (str);
-}
-
-char		*ft_strcp1(char const *s1, char *str, int i)
-{
-	int j;
-
-	j = 0;
-	while (s1[i])
-	{
-		str[j] = s1[i];
-		i++;
-		j++;
-	}
-	str[j] = '\0';
-	return (str);
-}
-
-char		*ft_after_trim(char const *s1, char const *set, int size)
-{
-	int		i;
-	int		j;
-	int		mark;
-	char	*str;
-
-	i = size - 1;
-	j = 0;
-	if (!(str = malloc(sizeof(char) * size + 1)))
-		return (NULL);
-	mark = 0;
-	while (s1[i] && mark == 0)
-	{
-		while (set[j])
-		{
-			if (set[j] == s1[i])
-			{
-				i--;
-				j = 0;
-			}
-			else
-				j++;
-		}
-		mark = 1;
-	}
-	return (ft_strcp2(s1, str, i));
-}
-
-char		*ft_before_trim(char const *s1, char const *set, int size)
-{
-	int		i;
-	int		j;
-	int		mark;
-	char	*str;
+	int i;
 
 	i = 0;
-	j = 0;
-	mark = 0;
-	if (!(str = malloc(sizeof(char) * size + 1)))
-		return (NULL);
-	while (s1[i] && mark == 0)
+	while (set[i])
 	{
-		while (set[j])
-		{
-			if (set[j] == s1[i])
-			{
-				i++;
-				j = 0;
-			}
-			else
-				j++;
-		}
-		mark = 1;
+		if (set[i] == c)
+			return (1);
+		i++;
 	}
-	return (ft_strcp1(s1, str, i));
+	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	char	*newstr;
-	char	*dst;
+	char	*new_str;
+	size_t	start;
+	size_t	end;
 	size_t	size;
 
-	i = 0;
-	newstr = ft_before_trim(s1, set, ft_strlen(s1));
-	newstr = ft_after_trim(newstr, set, ft_strlen(newstr));
-	size = ft_strlen(newstr);
-	if (!(dst = malloc(sizeof(char) * size + 1)))
+	start = 0;
+	if (s1 == NULL || set == NULL)
 		return (NULL);
-	while (i < size)
+	end = ft_strlen(s1);
+	while (is_in_str(s1[start], (char *)set))
+		start++;
+	while (is_in_str(s1[end - 1], (char *)set) && end > start)
+		end--;
+	if (end == start)
+		return (ft_strdup(""));
+	if (!(new_str = malloc(sizeof(char) * (end - start) + 1)))
+		return (NULL);
+	size = -1;
+	while (start < end)
 	{
-		dst[i] = newstr[i];
-		i++;
+		new_str[++size] = s1[start];
+		start++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	new_str[size + 1] = '\0';
+	return (new_str);
 }
