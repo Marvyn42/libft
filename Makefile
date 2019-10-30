@@ -35,7 +35,7 @@ SRC = ft_atoi.c \
 
 HEADERS		= libft.h
 
-OBJS		= ${SRC:.c=.o}
+OBJS		= $(SRC:.c=.o)
 
 NAME		= libft.a
 
@@ -45,19 +45,19 @@ CFLAGS		= -Wall -Wextra -Werror
 
 RM			= rm -f
 
-all:		${NAME}
+all:		$(NAME)
 
 .c.o:
-			${CC} ${CFLAGS} -I ${HEADERS} -c $< -o ${<:.c=.o}
+			$(CC) $(CFLAGS) -I $(HEADERS) -c $< -o $(<:.c=.o)
 
-${NAME}:	${OBJS}
-			ar rc libft.a ${OBJS}
+$(NAME):	$(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
 clean:
-			${RM} ${OBJS}
+			$(RM) $(OBJS)
 
 fclean:		clean
-			${RM} ${NAME}
+			$(RM) $(NAME)
 
 re:			fclean all
 
