@@ -6,128 +6,70 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:02:13 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/22 13:16:36 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/30 16:21:34 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		str_nbr(char *str)
+int		ft_wordcount(char const *s, char c)
 {
-	int		i;
-	int		cptr;
+	int i;
+	int count;
 
-	i = 1;
-	cptr = 1;
-	if (str[0] == 0)
-		return (0);
-	if (str[0] == 7)
-		cptr = 0;
-	while (str[i])
+	i = 0;
+	count = 0;
+	while (s[i])
 	{
-		if (str[i] != 7 && str[i - 1] == 7)
-			cptr++;
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != c && s[i])
+			count++;
+		while (s[i] != c && s[i])
+			i++;
 	}
-	return (cptr);
+	return (count);
 }
 
-int		*char_number(char *str, int str_nbr)
+int		ft_wordsize(char const *str, char c)
 {
+	int	i;
+	int	len;
+
+	i = 0;
+	len = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i] != c && str[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**mem;
 	int		i;
 	int		j;
-	int		*cptr;
+	int		k;
 
-	i = 1;
+	i = -1;
 	j = 0;
-	if (str_nbr == 0 || !(cptr = (int *)malloc(sizeof(int) * (str_nbr))))
-		return (0);
-	cptr[0] = 0;
-	if (str[0] != 7)
-		cptr[0]++;
-	while (str[i])
+	if (!s || !c || !(mem = malloc(sizeof(char*) * (ft_wordcount(s, c) + 1))))
+		return (NULL);
+	while (ft_wordcount(s, c) > ++i)
 	{
-		if (str[i] != 7)
-			cptr[j]++;
-		if (str[i] == 7 && str[i - 1] != 7)
-		{
+		k = 0;
+		if (!(mem[i] = malloc(sizeof(char) * (ft_wordsize(&s[j], c) + 1))))
+			return (NULL);
+		while (s[j] == c)
 			j++;
-			if (j < str_nbr)
-				cptr[j] = 0;
-		}
-		i++;
+		while (s[j] != c && s[j])
+			mem[i][k++] = s[j++];
+		mem[i][k] = '\0';
 	}
-	return (cptr);
-}
-
-char	*ft_replace_charset(const char *s, char c, int size)
-{
-	char	*strcpy;
-	int		i;
-
-	i = 0;
-	strcpy = (char *)malloc(sizeof(char) * (size + 1));
-	while (s[i])
-	{
-		if (s[i] == c)
-			strcpy[i] = 7;
-		else
-			strcpy[i] = s[i];
-		i++;
-	}
-	strcpy[i] = 0;
-	return (strcpy);
-}
-
-void    ft_copy(char **split, char *str, int strnb)
-{
-	int             j;
-	int             i;
-	int             cptr;
-
-	j = 0;
-	i = 0;
-	cptr = 0;
-	if (str[0] == 7)
-		cptr = -1;
-	while (str[i])
-	{
-		if (i != 0 && str[i] != 7 && str[i - 1] == 7)
-			cptr++;
-		if (cptr == strnb)
-			break ;
-		i++;
-	}
-	while (str[i] != 7 && str[i] != 0)
-	{
-		split[strnb][j] = str[i];
-		i++;
-		j++;
-	}
-	split[strnb][j] = 0;
-}
-
-char	**ft_split(const char *s, char c)
-{
-	int		i;
-	int		j;
-	int		*c_nb;
-	char	**split;
-	char	*new_str;
-
-	i = 0;
-	while (s[i])
-		i++;
-	new_str = ft_replace_charset(s, c, i);
-	split = malloc(sizeof(*split) * (str_nbr(new_str) + 1));
-	c_nb = char_number(new_str, str_nbr(new_str));
-	j = 0;
-	while (j < str_nbr(new_str))
-	{
-		split[j] = malloc(sizeof(**split) * (c_nb[j] + 1));
-		ft_copy(split, new_str, j);
-		j++;
-	}
-	split[j] = 0;
-	return (split);
+	mem[i] = 0;
+	return (mem);
 }
