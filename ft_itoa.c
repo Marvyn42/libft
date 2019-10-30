@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:38:31 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/18 14:41:30 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/10/30 12:20:46 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_size(long int n)
 	while (n > 9)
 	{
 		i++;
-		n  = n / 10;
+		n = n / 10;
 	}
 	return (i);
 }
@@ -35,23 +35,23 @@ char	*ft_itoa(int n)
 	char		*str;
 	size_t		i;
 	long int	cp;
-	
-	cp = (long int) n;
+
+	cp = (long int)n;
 	i = ft_size(cp);
-	if(!(str = malloc(sizeof(char) * i)))
+	if (!(str = malloc(sizeof(char) * i)))
 		return (NULL);
 	if (cp < 0)
 	{
 		str[0] = '-';
 		cp = -cp;
 	}
-	str[i - 1]= '\0';
+	str[i - 1] = '\0';
 	i--;
-	while ((i > 0 && cp > 0) || (cp == 0 && i > 0))
+	while (((i > 0 && cp > 0) || (cp == 0 && i > 0)) && (str[i - 1] != '-'))
 	{
-		str[i - 1]= cp % 10 + '0';
+		str[i - 1] = cp % 10 + '0';
 		cp = cp / 10;
 		i--;
 	}
-    return (str);
+	return (str);
 }
