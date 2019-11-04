@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 15:54:00 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/31 19:07:52 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/04 11:17:30 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+t_list				*ft_lstnew(void *content);
 
 #endif
