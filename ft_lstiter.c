@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 14:47:58 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/06 20:14:11 by mamaquig         ###   ########.fr       */
+/*   Created: 2019/11/06 11:17:29 by mamaquig          #+#    #+#             */
+/*   Updated: 2019/11/06 20:12:19 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst)
+	if (!lst || !f)
 		return (NULL);
-	while (lst->next)
+	while (lst)
+	{
+		f(lst);
 		lst = lst->next;
-	return (lst);
+	}
 }

@@ -6,15 +6,14 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:05:36 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/05 13:06:40 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/06 20:11:20 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst)
-	{
-		del(lst->content);
-		free(lst);
-	}
+	if (!lst || !del)
+		return (0);
+	del(lst->content);
+	free(lst);
 }
