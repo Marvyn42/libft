@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 12:00:20 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/30 14:49:33 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/08 20:00:31 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 	size_t	i;
 
-	if (!s)
+	if (!s || !start || !len)
 		return (NULL);
 	if (len == 0 || start > ft_strlen(s))
 		return (ft_strdup(""));
