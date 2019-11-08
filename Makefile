@@ -69,7 +69,7 @@ bonus:		$(BNS)
 			ar rcs $(NAME) $(BNS)
 
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(BNS)
 
 fclean:		clean
 			$(RM) $(NAME)

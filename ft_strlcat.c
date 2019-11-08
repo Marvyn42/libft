@@ -6,13 +6,13 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 16:19:57 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/23 16:34:25 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/08 16:09:57 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strnlen(const char *s, size_t maxlen)
+static size_t		ft_strnlen(const char *s, size_t maxlen)
 {
 	const char *str;
 
