@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:47:58 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/06 20:14:11 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/08 13:02:24 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

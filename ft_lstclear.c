@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:35:13 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/06 20:13:12 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/08 13:01:37 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

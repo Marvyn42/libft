@@ -6,14 +6,16 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 11:17:29 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/06 20:12:19 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/08 13:03:29 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
-		return (NULL);
+		return ;
 	while (lst)
 	{
 		f(lst);

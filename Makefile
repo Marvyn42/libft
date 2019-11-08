@@ -47,7 +47,7 @@ HEADERS		= libft.h
 
 OBJS		= $(SRC:.c=.o)
 
-BNS			= $(BONUS:.c=.o)
+BNS		= $(BONUS:.c=.o)
 
 NAME		= libft.a
 
@@ -65,7 +65,7 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
 
-$(BONUS):	$(BNS)
+bonus:		$(BNS)
 			ar rcs $(NAME) $(BNS)
 
 clean:

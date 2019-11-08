@@ -6,9 +6,11 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 11:25:22 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/06 19:53:33 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/08 13:34:24 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -22,7 +24,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		if (!(tmp = ft_lstnew(f(lst->content))))
 		{
-			ft_lstclear(&nlist, &del);
+			ft_lstclear(&nlist, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&nlist, tmp);
