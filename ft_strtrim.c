@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:01:25 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/08 20:01:54 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/12 13:10:42 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	size;
 
 	start = 0;
-	if (s1 == NULL || set == NULL)
+	if (!s1 || !set)
 		return (NULL);
 	end = ft_strlen(s1);
 	while (ft_strchr((char *)set, s1[start]) && s1[start])
