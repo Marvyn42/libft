@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:29:18 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/30 15:00:53 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/12 14:34:03 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
-
-	i = 0;
-	while (s && s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	if (s && fd > 0)
+		write(fd, s, ft_strlen(s));
 }

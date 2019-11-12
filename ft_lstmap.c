@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 11:25:22 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/08 19:34:17 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/12 14:15:17 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list *nlist;
 	t_list *tmp;
 
-	nlist = lst;
 	if (!lst || !f || !del)
 		return (NULL);
 	while (lst)

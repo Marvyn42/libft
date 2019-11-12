@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 16:19:57 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/08 16:09:57 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/12 14:37:49 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static size_t		ft_strnlen(const char *s, size_t maxlen)
 	return (str - s);
 }
 
-size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t				ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t srclen;
 	size_t dstlen;

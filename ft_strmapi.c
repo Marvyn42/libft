@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:06:19 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/08 13:05:59 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/12 13:55:39 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 	{
-		str[i] = (*f)(i, s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';
