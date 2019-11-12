@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:02:13 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/12 13:57:24 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/12 18:21:51 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,14 @@ char			**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 	int		k;
+	int		tmp;
 
 	i = -1;
 	j = 0;
-	if (!s || !c || !(mem = malloc(sizeof(char*) * (ft_wordcount(s, c) + 1))))
+	tmp = ft_wordcount(s, c);
+	if (!s || !(mem = malloc(sizeof(char*) * (tmp + 1))))
 		return (NULL);
-	while (ft_wordcount(s, c) > ++i)
+	while (tmp > ++i)
 	{
 		k = 0;
 		if (!(mem[i] = malloc(sizeof(char) * (ft_wordsize(&s[j], c) + 1))))

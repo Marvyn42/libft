@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:01:25 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/11/12 13:10:42 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/12 17:48:47 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*new_str;
 	size_t	start;
 	size_t	end;
-	size_t	size;
 
 	start = 0;
 	if (!s1 || !set)
@@ -29,14 +27,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	if (end == start)
 		return (ft_strdup(""));
-	if (!(new_str = malloc(sizeof(char) * (end - start) + 1)))
-		return (NULL);
-	size = -1;
-	while (start < end)
-	{
-		new_str[++size] = s1[start];
-		start++;
-	}
-	new_str[size + 1] = '\0';
-	return (new_str);
+	return (ft_substr(s1, start, end - start));
 }
