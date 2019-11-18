@@ -6,7 +6,7 @@
 /*   By: mamaquig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 18:22:06 by mamaquig          #+#    #+#             */
-/*   Updated: 2019/10/22 20:19:25 by mamaquig         ###   ########.fr       */
+/*   Updated: 2019/11/18 18:41:35 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,13 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int		i;
 	int		s;
 	char	*dest;
 
-	i = 0;
 	s = ft_strlen(s1);
 	if (!(dest = malloc(sizeof(char) * s + 1)))
 		return (NULL);
-	while (s1[i])
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	dest[i] = '\0';
+	dest = ft_memcpy(dest, s1, s);
+	dest[s] = '\0';
 	return (dest);
 }
